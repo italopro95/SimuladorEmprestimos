@@ -1,0 +1,49 @@
+// PROGRAMA PARA CÁLCULO DE EMPRÉSTIMO
+
+
+function chamar () {
+
+   var vCasa = parseFloat("");
+   var vSal = parseFloat("");
+   var anos = parseInt("");
+
+   vCasa = document.getElementById('valor').value;
+   vSal = document.getElementById('salario').value;
+   anos = document.getElementById('anos').value;
+
+   var vPrestacao = vCasa/(anos*12);
+   
+   if ( (vCasa <= 0) || (vSal <= 0) || (anos < 1) ) {
+
+      document.getElementById('resultado').innerHTML = "Valor Inválido!";
+      document.getElementById('resultado1').innerHTML = null;
+
+   }
+
+   else {
+      
+      if (vPrestacao > (vSal*0.3)) {
+       
+        document.getElementById('res').style.display = "block";
+
+        document.getElementById('resultado').innerHTML =  "Seu Empréstimo foi negado!!";
+       
+      }
+
+      else if (vPrestacao <=  (vSal*0.3)) {
+       
+        document.getElementById('resultado').innerHTML = "Seu Empréstimo foi aprovado!! "
+
+        document.getElementById('resultado1').innerHTML =  ("serão " +  (anos*12) + " prestaçoes de " + vPrestacao.toFixed(2) + " Reais");
+      }
+   }
+
+}
+
+
+function limpar() {
+
+    document.getElementById('resultado').innerHTML = null;
+    document.getElementById('resultado1').innerHTML = null;
+   
+}

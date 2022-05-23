@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+        body {
+            width: 100%; 
+            position: relative;
+            
+        }
+
+        form {
+            display: grid;
+            width: 200px;
+            margin: auto;
+            margin-top: 5rem;
+        }
+
+        input, button {
+            width: 100%;
+            margin-top: .5rem;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid black;
+            font-size: 1.5em;
+        }
+       
+
+        .camps {
+           margin-bottom: 2rem; 
+        }
+
+        .camps span {
+          text-transform: uppercase;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        input[type="button"] , input[type="reset"] {
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover, input[type="reset"]:hover {
+           color: #ffffff;
+           background-color: #000000;
+        }
+
+        #res {
+            width: 400px;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid black;
+            margin: auto;
+            border-radius: 10px;
+            background-color: #8d8984;
+            position: fixed;
+            top: 25%;
+            left: 100px;
+            font-size: 1.2em;
+            color: #29292b;
+        }
+
+        h3 {
+           margin-top: 8px;
+        }
+
+
+    </style>
+    <script src="emprestimo.js" denfer></script>
+    <title>Empréstimo</title>
+</head>
+<body>
+
+<form id="formulario">
+        <div class="camps">
+            <span>digite o valor da casa</span>
+            <input type="number" id="valor" name="valor">
+        </div>
+        <div class="camps">
+            <span>digite o valor do seu salário. (Obs: o valor das parcelas não devem ultrapassar 30% do seu salário.)</span>
+            <input type="number" name="salario" id="salario">
+        </div>
+        <div class="camps">
+            <span>digite em até quantos anos pretende pagar </span>
+            <input type="number" name="anos" id="anos">
+        </div>
+
+        <input type="button"
+        onclick="chamar()" name="" value="Calcular" id="enviar">
+
+        <input type="reset" value="Limpar" onclick="limpar()">  
+
+</form>
+
+<div id="res">
+    <h3 id="resultado"></h3>
+    <h3 id="resultado1"></h3>
+</div>
+
+
+</body>
+</html>
