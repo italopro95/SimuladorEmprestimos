@@ -11,31 +11,39 @@ function chamar () {
    vSal = document.getElementById('salario').value;
    anos = document.getElementById('anos').value;
 
-   var vPrestacao = vCasa/(anos*12);
-   
-   if ( (vCasa <= 0) || (vSal <= 0) || (anos < 1) ) {
-
-      document.getElementById('resultado').innerHTML = "Valor Inválido!";
-      document.getElementById('resultado1').innerHTML = null;
-
+   if (anos > 20) {
+       document.getElementById('resultado').innerHTML = ("Tempo máximo não pode ultrapassar 20 anos!!");
    }
 
    else {
       
-      if (vPrestacao > (vSal*0.3)) {
-       
-        document.getElementById('res').style.display = "block";
+      var vPrestacao = vCasa/(anos*12);
+   
+      if ( (vCasa <= 0) || (vSal <= 0) || (anos < 1) ) {
 
-        document.getElementById('resultado').innerHTML =  "Seu Empréstimo foi negado!!";
+         document.getElementById('resultado').innerHTML = "Valor Inválido!";
+         document.getElementById('resultado1').innerHTML = null;
+
+      }
+
+      else {
+      
+         if (vPrestacao > (vSal*0.3)) {
+       
+            document.getElementById('res').style.display = "block";
+
+            document.getElementById('resultado').innerHTML =  "Seu Empréstimo foi negado!!";
        
       }
 
-      else if (vPrestacao <=  (vSal*0.3)) {
+         else if (vPrestacao <=  (vSal*0.3)) {
        
-        document.getElementById('resultado').innerHTML = "Seu Empréstimo foi aprovado!! "
+            document.getElementById('resultado').innerHTML = "Seu Empréstimo foi aprovado!! "
 
-        document.getElementById('resultado1').innerHTML =  ("serão " +  (anos*12) + " prestaçoes de " + vPrestacao.toFixed(2) + " Reais");
-      }
+            document.getElementById('resultado1').innerHTML =  ("serão " +  (anos*12) + " prestaçoes de " + vPrestacao.toFixed(2) + " Reais");
+         }  
+   }
+
    }
 
 }
